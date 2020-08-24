@@ -1,16 +1,17 @@
 # site settings
-title: Forty
-subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
-baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
+title: Jerry Liu's Personal Website
+# subtitle: by HTML5 UP
+email: caliudeyu2017@gmail.com
+description: A simple personal website for blog posts and projects
+# baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
+baseurl: ""
 url: # the base hostname & protocol for your site
 author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
+street_address: UBC
+city: Vancouver
+state: BC
 zip_code: 55555
-country: United States of America
+country: Canada
 phone: (716) 555-5555
 
 # homepage tiles
