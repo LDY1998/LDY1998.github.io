@@ -5,7 +5,8 @@ email: caliudeyu2017@gmail.com
 description: A simple personal website for blog posts and projects
 # baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
 baseurl: ""
-url: # the base hostname & protocol for your site
+# the base hostname & protocol for your site
+url: http://ldy1998.github.io/
 author:
 street_address: UBC
 city: Vancouver
