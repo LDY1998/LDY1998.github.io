@@ -4,6 +4,10 @@
     <title>PaperMod on Jerry&#39;s Blog</title>
     <link>https://ldy1998.github.io/posts/papermod/</link>
     <description>Recent content in PaperMod on Jerry&#39;s Blog</description>
+    <image>
+      <url>https://ldy1998.github.io/papermod-cover.png</url>
+      <link>https://ldy1998.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ldy1998.github.io/posts/papermod/index.xml" rel="self" type="application/rss+xml" />
   </channel>
