@@ -1,36 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Jerry&#39;s Blog</title>
-    <link>https://ldy1998.github.io/</link>
-    <description>Recent content on Jerry&#39;s Blog</description>
-    <image>
-      <url>https://ldy1998.github.io/papermod-cover.png</url>
-      <link>https://ldy1998.github.io/papermod-cover.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jun 2022 12:26:35 -0700</lastBuildDate><atom:link href="https://ldy1998.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deep Reinforcement Learning: An overview</title>
-      <link>https://ldy1998.github.io/posts/rl-problem/</link>
-      <pubDate>Wed, 08 Jun 2022 12:26:35 -0700</pubDate>
-      
-      <guid>https://ldy1998.github.io/posts/rl-problem/</guid>
-      <description>RL Problem Reinforcement Learning Overview This section provides background of RL briefly.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LoveIt</title>
+        <link>https://ldy1998.github.io/</link>
+        <description>Hugo theme - LoveIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>caliudeyu2017@gmail.com (Jerry Liu)</managingEditor>
+            <webMaster>caliudeyu2017@gmail.com (Jerry Liu)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 08 Jun 2022 12:26:35 -0700</lastBuildDate>
+            <atom:link href="https://ldy1998.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Deep Reinforcement Learning: An overview</title>
+    <link>https://ldy1998.github.io/rl-problem/</link>
+    <pubDate>Wed, 08 Jun 2022 12:26:35 -0700</pubDate>
+    <author>Jerry Liu</author>
+    <guid>https://ldy1998.github.io/rl-problem/</guid>
+    <description><![CDATA[RL Problem Reinforcement Learning Overview This section provides background of RL briefly.
 Problem setup One biggest difference between RL and other machine learning problem is that the dataset is generated in a very different way.
 We first consider the components that are included in a typical RL problem:
-Agent: The agent serves as the subject of learning. It&amp;rsquo;s the one that conducts the learning behavior and the receiver of the consequences.</description>
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>https://ldy1998.github.io/posts/my-first-post/</link>
-      <pubDate>Sat, 04 Jun 2022 09:22:00 -0700</pubDate>
-      
-      <guid>https://ldy1998.github.io/posts/my-first-post/</guid>
-      <description>First test blog</description>
-    </item>
-    
-  </channel>
+Agent: The agent serves as the subject of learning. It&rsquo;s the one that conducts the learning behavior and the receiver of the consequences.]]></description>
+</item>
+<item>
+    <title>Hello World!</title>
+    <link>https://ldy1998.github.io/my-first-post/</link>
+    <pubDate>Sat, 04 Jun 2022 09:22:00 -0700</pubDate>
+    <author>Jerry Liu</author>
+    <guid>https://ldy1998.github.io/my-first-post/</guid>
+    <description><![CDATA[First test blog]]></description>
+</item>
+</channel>
 </rss>

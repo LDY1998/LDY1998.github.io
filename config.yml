@@ -1,7 +1,7 @@
 baseURL: "https://ldy1998.github.io/"
 languageCode: en-us
 title: Jerry's Blog
-theme: PaperMod
+theme: LoveIt
 publishDir: ./docs
 
 enableInlineShortcodes: true

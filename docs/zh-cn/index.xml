@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LoveIt</title>
+        <link>https://ldy1998.github.io/zh-cn/</link>
+        <description>Hugo theme - LoveIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>caliudeyu2017@gmail.com (Jerry Liu)</managingEditor>
+            <webMaster>caliudeyu2017@gmail.com (Jerry Liu)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+            <atom:link href="https://ldy1998.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
