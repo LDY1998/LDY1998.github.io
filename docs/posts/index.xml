@@ -10,7 +10,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jun 2022 09:22:00 -0700</lastBuildDate><atom:link href="https://ldy1998.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 12:26:35 -0700</lastBuildDate><atom:link href="https://ldy1998.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Reinforcement Learning: An overview</title>
+      <link>https://ldy1998.github.io/posts/rl-problem/</link>
+      <pubDate>Wed, 08 Jun 2022 12:26:35 -0700</pubDate>
+      
+      <guid>https://ldy1998.github.io/posts/rl-problem/</guid>
+      <description>RL Problem Reinforcement Learning Overview This section provides background of RL briefly.
+Problem setup One biggest difference between RL and other machine learning problem is that the dataset is generated in a very different way.
+We first consider the components that are included in a typical RL problem:
+Agent: The agent serves as the subject of learning. It&amp;rsquo;s the one that conducts the learning behavior and the receiver of the consequences.</description>
+    </item>
+    
     <item>
       <title>Hello World!</title>
       <link>https://ldy1998.github.io/posts/my-first-post/</link>
