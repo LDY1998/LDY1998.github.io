@@ -2,6 +2,7 @@
 title: "Deep Reinforcement Learning: An overview"
 date: 2022-06-08T12:26:35-07:00
 author: "Jerry Liu"
+mathjax: true
 ---
 
 # RL Problem
