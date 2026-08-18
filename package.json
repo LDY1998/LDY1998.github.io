@@ -17,6 +17,10 @@
     "check": "npm run lint && npm run typecheck && npm test"
   },
   "dependencies": {
+    "@mdit/plugin-katex": "^1.1.0",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.18.4",
+    "markdown-it": "^15.0.0",
     "next": "16.3.1",
     "react": "19.2.6",
     "react-dom": "19.2.6"
@@ -25,6 +29,7 @@
     "@eslint/js": "9.39.4",
     "@next/eslint-plugin-next": "16.3.1",
     "@tailwindcss/postcss": "4.2.1",
+    "@types/markdown-it": "^14.2.0",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",

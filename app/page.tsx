@@ -1,115 +1,12 @@
-"use client";
+import Link from "next/link";
 
-import { useEffect, useMemo, useState } from "react";
-
-type Article = {
-  title: string;
-  excerpt: string;
-  category: "人工智能" | "计算机科学" | "工程实践";
-  date: string;
-  readTime: string;
-  index: string;
-};
-
-const articles: Article[] = [
-  {
-    title: "从注意力到推理：大语言模型究竟学会了什么？",
-    excerpt:
-      "越过参数规模与榜单分数，从表征、上下文学习和涌现能力三个角度，重新理解语言模型的能力边界。",
-    category: "人工智能",
-    date: "2026.08.12",
-    readTime: "12 分钟",
-    index: "01",
-  },
-  {
-    title: "向量数据库不是魔法：一次语义检索的完整旅程",
-    excerpt:
-      "Embedding、近似最近邻与重排序如何协作，以及一个看似简单的 RAG 系统最容易在哪些地方失效。",
-    category: "工程实践",
-    date: "2026.08.04",
-    readTime: "9 分钟",
-    index: "02",
-  },
-  {
-    title: "为什么递归让人着迷，也让机器头疼",
-    excerpt:
-      "从调用栈、分治到函数式思维，用几段熟悉的程序，观察问题如何在更小的自身中得到回答。",
-    category: "计算机科学",
-    date: "2026.07.28",
-    readTime: "7 分钟",
-    index: "03",
-  },
-  {
-    title: "训练一个模型之前，先训练你的数据直觉",
-    excerpt:
-      "数据分布、泄漏、偏差与标签质量：决定模型上限的，往往是被我们略过的那些基础问题。",
-    category: "人工智能",
-    date: "2026.07.17",
-    readTime: "10 分钟",
-    index: "04",
-  },
-  {
-    title: "把系统变简单：缓存一致性的三个思维模型",
-    excerpt:
-      "不从协议名词开始，而从读、写和时间出发，建立一套可以迁移到真实工程中的一致性直觉。",
-    category: "计算机科学",
-    date: "2026.07.06",
-    readTime: "11 分钟",
-    index: "05",
-  },
-  {
-    title: "AI 应用的评估，不应该止于一个准确率",
-    excerpt:
-      "建立一套小而有效的评估框架，把离线指标、真实用户体验与失败案例放在同一张地图上。",
-    category: "工程实践",
-    date: "2026.06.24",
-    readTime: "8 分钟",
-    index: "06",
-  },
-];
-
-const categories = ["全部", "人工智能", "计算机科学", "工程实践"] as const;
-
-function SunIcon() {
-  return <span aria-hidden="true">☼</span>;
-}
-
-function MoonIcon() {
-  return <span aria-hidden="true">◐</span>;
-}
+import { ArticleArchive } from "@/app/components/article-archive";
+import { ThemeToggle } from "@/app/components/theme-toggle";
+import { getArticleSummaries, getFeaturedArticle } from "@/lib/articles";
 
 export default function Home() {
-  const [category, setCategory] = useState<(typeof categories)[number]>("全部");
-  const [query, setQuery] = useState("");
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldUseDark = saved ? saved === "dark" : prefersDark;
-    document.documentElement.dataset.theme = shouldUseDark ? "dark" : "light";
-
-    const frame = window.requestAnimationFrame(() => setDark(shouldUseDark));
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
-
-  const filteredArticles = useMemo(() => {
-    const keyword = query.trim().toLowerCase();
-    return articles.filter((article) => {
-      const matchesCategory = category === "全部" || article.category === category;
-      const matchesQuery =
-        !keyword ||
-        `${article.title}${article.excerpt}${article.category}`.toLowerCase().includes(keyword);
-      return matchesCategory && matchesQuery;
-    });
-  }, [category, query]);
-
-  function toggleTheme() {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.dataset.theme = next ? "dark" : "light";
-    window.localStorage.setItem("theme", next ? "dark" : "light");
-  }
+  const articles = getArticleSummaries();
+  const featuredArticle = getFeaturedArticle();
 
   return (
     <main>
@@ -121,9 +18,7 @@ export default function Home() {
         <nav className="nav-links" aria-label="主导航">
           <a href="#articles">文章</a>
           <a href="#about">关于</a>
-          <button className="theme-toggle" onClick={toggleTheme} aria-label={dark ? "切换到浅色模式" : "切换到深色模式"}>
-            {dark ? <SunIcon /> : <MoonIcon />}
-          </button>
+          <ThemeToggle />
         </nav>
       </header>
 
@@ -174,17 +69,17 @@ export default function Home() {
           </div>
           <div className="featured-copy">
             <div className="article-meta">
-              <span>人工智能</span>
-              <span>2026.08.12</span>
-              <span>12 分钟阅读</span>
+              <span>{featuredArticle.category}</span>
+              <span>{featuredArticle.date}</span>
+              <span>{featuredArticle.readTime}阅读</span>
             </div>
-            <h2>从注意力到推理：大语言模型究竟学会了什么？</h2>
-            <p>
-              当我们说模型“理解”了语言时，究竟在说什么？这篇文章越过参数规模和榜单分数，从表征、上下文学习与涌现能力出发，尝试画出更诚实的能力边界。
-            </p>
-            <a className="read-button" href="#articles">
+            <h2>
+              <Link href={`/articles/${featuredArticle.slug}/`}>{featuredArticle.title}</Link>
+            </h2>
+            <p>{featuredArticle.excerpt}</p>
+            <Link className="read-button" href={`/articles/${featuredArticle.slug}/`}>
               阅读文章 <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </article>
       </section>
@@ -194,57 +89,7 @@ export default function Home() {
           <span>02</span>
           <span id="archive-title">文章归档</span>
         </div>
-        <div className="archive-tools">
-          <div className="filters" role="group" aria-label="按主题筛选">
-            {categories.map((item) => (
-              <button
-                key={item}
-                className={category === item ? "active" : ""}
-                onClick={() => setCategory(item)}
-                aria-pressed={category === item}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-          <label className="search-box">
-            <span aria-hidden="true">⌕</span>
-            <span className="sr-only">搜索文章</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="搜索文章"
-            />
-          </label>
-        </div>
-
-        <div className="article-list" aria-live="polite">
-          {filteredArticles.length > 0 ? (
-            filteredArticles.map((article) => (
-              <article className="article-row" key={article.index}>
-                <span className="article-index">{article.index}</span>
-                <div className="article-main">
-                  <div className="article-meta">
-                    <span>{article.category}</span>
-                    <span>{article.date}</span>
-                  </div>
-                  <h3>{article.title}</h3>
-                  <p>{article.excerpt}</p>
-                </div>
-                <div className="article-side">
-                  <span>{article.readTime}</span>
-                  <span className="arrow" aria-hidden="true">↗</span>
-                </div>
-              </article>
-            ))
-          ) : (
-            <div className="empty-state">
-              <span>NULL</span>
-              <p>没有找到匹配的文章，换个关键词试试。</p>
-            </div>
-          )}
-        </div>
+        <ArticleArchive articles={articles} />
       </section>
 
       <section className="about" id="about" aria-labelledby="about-title">
