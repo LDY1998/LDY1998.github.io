@@ -87,8 +87,10 @@ export default function Home() {
     const saved = window.localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const shouldUseDark = saved ? saved === "dark" : prefersDark;
-    setDark(shouldUseDark);
     document.documentElement.dataset.theme = shouldUseDark ? "dark" : "light";
+
+    const frame = window.requestAnimationFrame(() => setDark(shouldUseDark));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const filteredArticles = useMemo(() => {

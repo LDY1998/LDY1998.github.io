@@ -15,8 +15,8 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
+*.tsbuildinfo
 
 # misc
 .DS_Store
@@ -31,10 +31,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
+# optional Vercel metadata
 .vercel
 
+# local output from alternate tooling
 /dist/
 /.wrangler/
-/outputs/
-/work/
