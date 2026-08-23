@@ -41,7 +41,7 @@ test("exports a readable page for every article", async () => {
 
 test("renders inline and display TeX as KaTeX HTML", async () => {
   const html = await readFile(
-    new URL("articles/attention-to-reasoning/index.html", outputRoot),
+    new URL("articles/attention-evolution-part-1/index.html", outputRoot),
     "utf8",
   );
 

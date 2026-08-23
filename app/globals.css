@@ -543,6 +543,7 @@ footer p { margin-bottom: 0; text-align: center; }
 .article-markdown code {
   padding: .15em .38em;
   background: var(--paper-deep);
+  color: var(--ink);
   font: .88em ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 .article-markdown pre {
